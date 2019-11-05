@@ -18,7 +18,7 @@ borderNewLine = '\n' + borderLine
 
 columns_to_parse = [1, 2, 3]
 
-header_names = ['Support Company', 'Support Organization', 
+header_names = ['Support Company', 'Support Organization',
                 'Support Group', 'Support Group ID',
                 'Full Name', 'Email Address']
 
@@ -36,7 +36,7 @@ if False:
 
 # ========== ========== ========== ========== ==========
 #
-def getFilenames(pattern):
+def getfilenames(pattern: object) -> object:
     print(borderIndentNew + 'Searching for files matching pattern [min: 2 required]')
     print(borderIndent + 'Pattern: ' + pattern)
     reportNames = []
@@ -48,6 +48,7 @@ def getFilenames(pattern):
     reportNames.sort()
     print(borderIndent + 'Files found: ' + str(len(reportNames)))
     return reportNames
+
 
 # ========== ========== ========== ========== ==========
 # def parse_excel_df(filename)
@@ -81,28 +82,37 @@ def parse_excel_df(filename):
 # ========== ========== ========== ========== ==========
 # def compareLists
 # replace with numpy.setdiff1d(df0, df1)
-def compareLists(df0, df1):
+def comparelists(df0, df1):
+    # To measure the time to complete comparison, save the current time
     now = datetime.datetime.now()
+    # Iterate through the first data frame
     for x in range(0, int(df0.count(numeric_only=True))):
+        # Get the group ID from the third column
         group_id0 = df0.iloc[x, 2]
+        # Iterate through the second data frame
         for y in range(0, int(df1.count(numeric_only=True))):
+            # Look for matching group IDs
             group_id1 = df1.iloc[y, 2]
+            # For each match found, set fourth column to -1
             if group_id0 == group_id1:
                 df0.iat[x, 3] = -1
                 break
-
+    # Copy first time stamp because 'now' has become 'then'
     then = now
+    # Update 'now' with the current time
     now = datetime.datetime.now()
+    # Print the time stamp difference
     print(borderIndent + 'Duration: ' + str(now - then))
+    # Return object
     return df0
 
 
 # ========== ========== ========== ========== ==========
 # def printPositives
-def printPositives(df):
+def printpositives(df):
     if int(df.max(numeric_only=True)) > 0:
         print(borderNewLine)
-        print(borderIndent + df.columns[3] +'\n//')
+        print(borderIndent + df.columns[3] + '\n//')
         for x in range(0, int(df.count(numeric_only=True))):
             if df.iloc[x, 3] == 1:
                 print(borderIndent + '-> ' + df.iloc[x, 0])
@@ -116,7 +126,7 @@ def printPositives(df):
 # def main
 def main():
     # Search local directory for files matching the pattern
-    reportNames = getFilenames(pattern)
+    reportNames = getfilenames(pattern)
 
     if len(reportNames) < 2:
         print(borderIndent + 'At least two files are required. Exiting...')
@@ -135,14 +145,21 @@ def main():
 
     # If group exists in last0 only then isNew = 1
     print(borderIndentNew + 'Iterating through rows to find new groups...')
-    last0 = compareLists(last0, last1)
+    last0 = comparelists(last0, last1)
 
     # If group exists in last1 only then isDisabled = 1
     print(borderIndentNew + 'Iterating through rows to find deleted groups...')
-    last1 = compareLists(last1, last0)
+    last1 = comparelists(last1, last0)
 
-    printPositives(last0)
-    printPositives(last1)
+    # Output objects not found the
+    printpositives(last0)
+    printpositives(last1)
+
+    # Print files used for comparison
+    print(borderIndentNew, 'Compared files:')
+    print(borderIndent, '1.', filename0)
+    print(borderIndent, '2.', filename1)
+    # We're done. Exiting...
 
     exit(0)
 
