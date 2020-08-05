@@ -14,7 +14,7 @@ borderIndentNew = '\n' + borderIndent
 borderLine = borderIndent + '========== ' * 5
 borderNewLine = '\n' + borderLine
 columns_to_parse = [0, 1, 2, 3]
-pattern = "*ITSM_Group_All_Queues_and_Members*.xlsx"
+pattern = "CSA023*ITSM_Group_All_Queues*.xlsx"
 reportNames = []
 
 
