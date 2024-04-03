@@ -1,0 +1,18 @@
+ZoneId.systemDefault() .................: America/Edmonton  
+ZoneId.getDisplayName() ................: Mountain Time  
+
+LocalDateTime.now() ....................: 2024-04-02T23:36:36.297547600  
+  ISO_LOCAL_DATE_TIME ..................: 2024-04-02T23:36:36.2975476  
+  ISO_LOCAL_DATE .......................: 2024-04-02  
+
+ZonedDateTime.now() ....................: 2024-04-02T23:36:36.297547600-06:00[America/Edmonton]  
+  ISO_ZONED_DATE_TIME ..................: 2024-04-02T23:36:36.2975476-06:00[America/Edmonton]  
+  ISO_OFFSET_DATE_TIME .................: 2024-04-02T23:36:36.2975476-06:00  
+  RFC_1123_DATE_TIME ...................: Tue, 2 Apr 2024 23:36:36 -0600  
+
+Instant.now() ..........................: 2024-04-02T23:36:36.297547600-06:00[America/Edmonton]  
+
+ZonedDateTime.now() ....................: 2024-04-03T05:36:36.297547600Z  
+  ISO_ZONED_DATE_TIME ..................: 2024-04-03T05:36:36.2975476Z  
+  ISO_OFFSET_DATE_TIME .................: 2024-04-03T05:36:36.2975476Z  
+  RFC_1123_DATE_TIME ...................: Wed, 3 Apr 2024 05:36:36 GMT  
