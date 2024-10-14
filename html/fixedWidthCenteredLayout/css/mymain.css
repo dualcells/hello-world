@@ -1,0 +1,76 @@
+body.myStyle {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    line-height: 1.67;
+    color: rgba(0, 0, 0, .85);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(0, 0, 0, .05);
+}
+
+table.myStyle,
+th,
+td {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 0.5em;
+}
+
+tr.header {
+    background-color: rgba(100, 149, 237, .5);
+}
+
+tr.odd {
+    background: rgba(255, 250, 205, .5);
+}
+
+tr.even {
+    background: rgba(64, 64, 64, .05);
+}
+
+li {
+    padding-top: 0.5em;
+}
+
+.padded {
+    padding: 0.5em;
+}
+
+.box {
+    border: solid 1px;
+    margin-bottom: 0.35em;
+}
+
+.bgc-red {
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+.bgc-orange {
+    background-color: rgba(255, 165, 0, 0.4);
+}
+
+.bgc-yellow {
+    background-color: rgba(255, 255, 0, 0.4);
+}
+
+.bgc-green {
+    background-color: rgba(0, 128, 0, 0.4);
+}
+
+.bgc-blue {
+    background-color: rgba(0, 0, 255, 0.4);
+}
+
+.bgc-indigo {
+    background-color: rgba(75, 0, 130, 0.4);
+}
+
+.bgc-violet {
+    background-color: rgb(238, 130, 238, 0.4);
+}
+
+.bgc-grey {
+    background-color: rgba(128, 128, 128, 0.4);
+}

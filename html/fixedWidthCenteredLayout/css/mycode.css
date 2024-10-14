@@ -1,0 +1,57 @@
+/* Used by fenced codeblocks written in markdown and converted to html with Pandoc*/
+div.sourceCode {
+    margin: 0px;
+}
+
+span.at {
+    /* attribute */
+    color: #79c0ff;
+}
+
+span.cf {
+    /* common function? */
+    color: #ff7b72;
+}
+
+span.co {
+    /* comment */
+    color: #690;
+    /* #708090; */
+}
+
+span.kw {
+    /* keyword */
+    color: #ff7b72;
+}
+
+span.fu {
+    /* function */
+    color: #ffa657;
+}
+
+span.op {
+    /* operator */
+    color: rgb(210, 168, 255);
+}
+
+span.st {
+    /* string */
+    color: rgb(165, 214, 255);
+}
+
+code {
+    color: rgb(203, 176, 120);
+    background-color: rgb(43, 43, 43);
+    padding: 0.25em;
+    border-radius: 5px;
+}
+
+pre>code,
+code.sourceCode.javascript {
+    color: rgb(230, 237, 243);
+    background-color: rgb(22, 27, 34);
+    display: block;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    overflow-x: auto;
+    white-space: pre;
+}
