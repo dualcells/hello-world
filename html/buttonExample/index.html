@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Increment and Decrement Example</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .container > * {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Button Click Counter</h1>
+    <div class="container">
+        <p>Count: <span id="count">0</span></p>
+        <button onclick="increment()">Increment</button>
+        <button onclick="decrement()">Decrement</button>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function increment() {
+            count++;
+            document.getElementById('count').textContent = count;
+        }
+
+        function decrement() {
+            if (count > 0) { // Prevents count from going negative
+                count--;
+                document.getElementById('count').textContent = count;
+            }
+        }
+    </script>
+</body>
+</html>
