@@ -4,7 +4,7 @@
 
 ### Basic
 
-``` sh
+``` shell
 git config --global user.name "Your git username"
 git config --global user.email "Your git email"
 git config --global --list
@@ -12,20 +12,32 @@ git config --global --list
 
 ### SSH
 
-``` sh
+``` shell
 git config --global gpg.format ssh
 git config --global user.signingkey ~/path/to/key.pub
 ```
 
+#### SSH test
+
+``` shell
+ssh -T git@github.com
+```
+
+Expected Output
+
+``` text
+Hi dualcells! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
 ### URL (Examples)
 
-``` bash
-$ git remote -v
+``` shell
+git remote -v
 ```
 
 #### URL (git)
 
-``` text
+``` shell
 origin	git@github.com:dualcells/hello-world.git (fetch)
 origin	git@github.com:dualcells/hello-world.git (push)
 ```
